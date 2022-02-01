@@ -4,8 +4,9 @@ Deploy a quick squid proxy with cloak transport..
 Primarily made to work with Heroku
 
 ```bash
-docker run -d -v /home/stargazer/configs/docker/cloak:/config -p 443:443 <image_name>
+docker run -d --network="host" -v /home/stargazer/configs/cloak/:/config -p 443:443 <image_name>
 ```
+You can edit the config later in configs folder and restart the container
 
 To set parameters manually make a .env file with
 
